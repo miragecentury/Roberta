@@ -4,6 +4,9 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>Face.hpp</itemPath>
+      <itemPath>Mesh.hpp</itemPath>
+      <itemPath>Vertice.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -36,7 +39,54 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>/usr/local/boost_1_53_0</pElem>
+          </incDir>
+          <commandLine>-std=c++0x -L /usr/local/boost_1_53_0/libs/</commandLine>
+        </ccTool>
+        <linkerTool>
+          <linkerAddLib>
+            <pElem>/usr/local/boost_1_53_0/stage/lib</pElem>
+          </linkerAddLib>
+          <linkerLibItems>
+            <linkerLibLibItem>boost_atomic</linkerLibLibItem>
+            <linkerLibLibItem>boost_chrono</linkerLibLibItem>
+            <linkerLibLibItem>boost_context</linkerLibLibItem>
+            <linkerLibLibItem>boost_date_time</linkerLibLibItem>
+            <linkerLibLibItem>boost_exception</linkerLibLibItem>
+            <linkerLibLibItem>boost_filesystem</linkerLibLibItem>
+            <linkerLibLibItem>boost_graph</linkerLibLibItem>
+            <linkerLibLibItem>boost_locale</linkerLibLibItem>
+            <linkerLibLibItem>boost_math_c99</linkerLibLibItem>
+            <linkerLibLibItem>boost_math_c99f</linkerLibLibItem>
+            <linkerLibLibItem>boost_math_c99l</linkerLibLibItem>
+            <linkerLibLibItem>boost_math_tr1</linkerLibLibItem>
+            <linkerLibLibItem>boost_math_tr1f</linkerLibLibItem>
+            <linkerLibLibItem>boost_math_tr1l</linkerLibLibItem>
+            <linkerLibLibItem>boost_prg_exec_monitor</linkerLibLibItem>
+            <linkerLibLibItem>boost_program_options</linkerLibLibItem>
+            <linkerLibLibItem>boost_python</linkerLibLibItem>
+            <linkerLibLibItem>boost_random</linkerLibLibItem>
+            <linkerLibLibItem>boost_regex</linkerLibLibItem>
+            <linkerLibLibItem>boost_serialization</linkerLibLibItem>
+            <linkerLibLibItem>boost_signals</linkerLibLibItem>
+            <linkerLibLibItem>boost_system</linkerLibLibItem>
+            <linkerLibLibItem>boost_test_exec_monitor</linkerLibLibItem>
+            <linkerLibLibItem>boost_thread</linkerLibLibItem>
+            <linkerLibLibItem>boost_timer</linkerLibLibItem>
+            <linkerLibLibItem>boost_unit_test_framework</linkerLibLibItem>
+            <linkerLibLibItem>boost_wave</linkerLibLibItem>
+            <linkerLibLibItem>boost_wserialization</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
       </compileType>
+      <item path="Face.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Mesh.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Vertice.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
@@ -61,6 +111,12 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="Face.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Mesh.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Vertice.hpp" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
