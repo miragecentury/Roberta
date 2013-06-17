@@ -5,11 +5,12 @@
  * Created on 17 juin 2013, 09:54
  */
 
-#include "Mesh.hpp"
-#include "Vertice.hpp"
+
 
 #ifndef FACE_HPP
 #define	FACE_HPP
+
+#include "Vertice.hpp"
 
 namespace PROFOND {
 
@@ -25,6 +26,7 @@ namespace PROFOND {
         PROFOND::Vertice * get_v3();
 
     private:
+        //Attributs
         PROFOND::Vertice* v1;
         PROFOND::Vertice* v2;
         PROFOND::Vertice* v3;

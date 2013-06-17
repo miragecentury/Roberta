@@ -35,6 +35,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/Face.o \
+	${OBJECTDIR}/Vertice.o \
 	${OBJECTDIR}/main.o
 
 
@@ -61,6 +63,16 @@ LDLIBSOPTIONS=-L/usr/local/boost_1_53_0/stage/lib -lboost_atomic -lboost_chrono 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/roberta: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/roberta ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/Face.o: Face.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g -I/usr/local/boost_1_53_0 -std=c++0x -L /usr/local/boost_1_53_0/libs/ -MMD -MP -MF $@.d -o ${OBJECTDIR}/Face.o Face.cpp
+
+${OBJECTDIR}/Vertice.o: Vertice.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g -I/usr/local/boost_1_53_0 -std=c++0x -L /usr/local/boost_1_53_0/libs/ -MMD -MP -MF $@.d -o ${OBJECTDIR}/Vertice.o Vertice.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
