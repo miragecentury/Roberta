@@ -17,6 +17,7 @@
 #include <boost/iterator.hpp>
 #include <map>
 #include <string>
+#include <iostream>
 
 namespace PROFOND {
 
@@ -24,18 +25,20 @@ namespace PROFOND {
     public:
         Mesh();
         ~Mesh();
-        
+
         //JSON
         void populeJSON(std::string pathToJSON);
         void generateJSON(std::string pathToJSON);
-        
+
         //Add
         void addVertice(float x, float y, float z);
         void addFace(PROFOND::Vertice* v1, PROFOND::Vertice* v2, PROFOND::Vertice* v3);
         void addFace(int indice_v1, int indice_v2, int indice_v3);
-        
+
         //Deletion
         void delFace(int indice);
+        void delFaceWithVertice(int indice_vertice);
+        void delFaceWithVertice(PROFOND::Vertice* v);
         void delvertice(int indice);
 
     private:

@@ -50,7 +50,7 @@
         <ccTool>
           <incDir>
             <pElem>/usr/local/boost_1_53_0</pElem>
-            <pElem>/usr/local/lib/json-spirit</pElem>
+            <pElem>/usr/local/lib/json-spirit/include</pElem>
           </incDir>
           <commandLine>-std=c++0x -L /usr/local/boost_1_53_0/libs/ -L/usr/local/lib/json-spirit</commandLine>
         </ccTool>

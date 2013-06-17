@@ -68,22 +68,22 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/roberta: ${OBJECTFILES}
 ${OBJECTDIR}/Face.o: Face.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -I/usr/local/boost_1_53_0 -I/usr/local/lib/json-spirit -std=c++0x -L /usr/local/boost_1_53_0/libs/ -L/usr/local/lib/json-spirit -MMD -MP -MF $@.d -o ${OBJECTDIR}/Face.o Face.cpp
+	$(COMPILE.cc) -g -I/usr/local/boost_1_53_0 -I/usr/local/lib/json-spirit/include -std=c++0x -L /usr/local/boost_1_53_0/libs/ -L/usr/local/lib/json-spirit -MMD -MP -MF $@.d -o ${OBJECTDIR}/Face.o Face.cpp
 
 ${OBJECTDIR}/Mesh.o: Mesh.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -I/usr/local/boost_1_53_0 -I/usr/local/lib/json-spirit -std=c++0x -L /usr/local/boost_1_53_0/libs/ -L/usr/local/lib/json-spirit -MMD -MP -MF $@.d -o ${OBJECTDIR}/Mesh.o Mesh.cpp
+	$(COMPILE.cc) -g -I/usr/local/boost_1_53_0 -I/usr/local/lib/json-spirit/include -std=c++0x -L /usr/local/boost_1_53_0/libs/ -L/usr/local/lib/json-spirit -MMD -MP -MF $@.d -o ${OBJECTDIR}/Mesh.o Mesh.cpp
 
 ${OBJECTDIR}/Vertice.o: Vertice.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -I/usr/local/boost_1_53_0 -I/usr/local/lib/json-spirit -std=c++0x -L /usr/local/boost_1_53_0/libs/ -L/usr/local/lib/json-spirit -MMD -MP -MF $@.d -o ${OBJECTDIR}/Vertice.o Vertice.cpp
+	$(COMPILE.cc) -g -I/usr/local/boost_1_53_0 -I/usr/local/lib/json-spirit/include -std=c++0x -L /usr/local/boost_1_53_0/libs/ -L/usr/local/lib/json-spirit -MMD -MP -MF $@.d -o ${OBJECTDIR}/Vertice.o Vertice.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -I/usr/local/boost_1_53_0 -I/usr/local/lib/json-spirit -std=c++0x -L /usr/local/boost_1_53_0/libs/ -L/usr/local/lib/json-spirit -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -I/usr/local/boost_1_53_0 -I/usr/local/lib/json-spirit/include -std=c++0x -L /usr/local/boost_1_53_0/libs/ -L/usr/local/lib/json-spirit -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:
