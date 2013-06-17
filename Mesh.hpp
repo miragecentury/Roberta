@@ -37,13 +37,15 @@ namespace PROFOND {
 
         //Deletion
         void delFace(int indice);
-        void delFaceWithVertice(int indice_vertice);
-        void delFaceWithVertice(PROFOND::Vertice* v);
+        void delFacesWithVertice(int indice_vertice);
+        void delFacesWithVertice(PROFOND::Vertice* v);
         void delvertice(int indice);
 
     private:
         std::map<int, PROFOND::Vertice*> vertices;
         std::map<int, PROFOND::Face*> faces;
+        int nbvertices;
+        int nbfaces;
     };
 };
 
