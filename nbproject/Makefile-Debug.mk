@@ -55,7 +55,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-L/usr/local/boost_1_53_0/stage/lib -L/usr/local/lib/json-spirit/build -lboost_atomic -lboost_chrono -lboost_context -lboost_date_time -lboost_exception -lboost_filesystem -lboost_graph -lboost_locale -lboost_math_c99 -lboost_math_c99f -lboost_math_c99l -lboost_math_tr1 -lboost_math_tr1f -lboost_math_tr1l -lboost_prg_exec_monitor -lboost_program_options -lboost_python -lboost_random -lboost_regex -lboost_serialization -lboost_signals -lboost_system -lboost_test_exec_monitor -lboost_thread -lboost_timer -lboost_unit_test_framework -lboost_wave -lboost_wserialization -ljson_spirit
+LDLIBSOPTIONS=-L/usr/local/boost_1_53_0/stage/lib -L/usr/local/lib/json-spirit/build -lboost_atomic -lboost_chrono -lboost_context -lboost_date_time -lboost_exception -lboost_filesystem -lboost_graph -lboost_locale -lboost_math_c99 -lboost_math_c99f -lboost_math_c99l -lboost_math_tr1 -lboost_math_tr1f -lboost_math_tr1l -lboost_prg_exec_monitor -lboost_program_options -lboost_random -lboost_regex -lboost_serialization -lboost_signals -lboost_system -lboost_test_exec_monitor -lboost_thread -lboost_timer -lboost_unit_test_framework -lboost_wave -lboost_wserialization -ljson_spirit
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
