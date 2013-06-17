@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/Face.o \
+	${OBJECTDIR}/Mesh.o \
 	${OBJECTDIR}/Vertice.o \
 	${OBJECTDIR}/main.o
 
@@ -68,6 +69,11 @@ ${OBJECTDIR}/Face.o: Face.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Face.o Face.cpp
+
+${OBJECTDIR}/Mesh.o: Mesh.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Mesh.o Mesh.cpp
 
 ${OBJECTDIR}/Vertice.o: Vertice.cpp 
 	${MKDIR} -p ${OBJECTDIR}

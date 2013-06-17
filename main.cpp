@@ -6,6 +6,8 @@
  */
 
 #include <cstdlib>
+#include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -13,7 +15,11 @@ using namespace std;
  * 
  */
 int main(int argc, char** argv) {
-    
+
     return 0;
+}
+
+void log(std::string msg) {
+    std::cout << "LOG: " << msg << std::endl;
 }
 

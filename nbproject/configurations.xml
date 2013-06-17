@@ -21,6 +21,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>Face.cpp</itemPath>
+      <itemPath>Mesh.cpp</itemPath>
       <itemPath>Vertice.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
@@ -49,12 +50,14 @@
         <ccTool>
           <incDir>
             <pElem>/usr/local/boost_1_53_0</pElem>
+            <pElem>/usr/local/lib/json-spirit</pElem>
           </incDir>
-          <commandLine>-std=c++0x -L /usr/local/boost_1_53_0/libs/</commandLine>
+          <commandLine>-std=c++0x -L /usr/local/boost_1_53_0/libs/ -L/usr/local/lib/json-spirit</commandLine>
         </ccTool>
         <linkerTool>
           <linkerAddLib>
             <pElem>/usr/local/boost_1_53_0/stage/lib</pElem>
+            <pElem>/usr/local/lib/json-spirit/build</pElem>
           </linkerAddLib>
           <linkerLibItems>
             <linkerLibLibItem>boost_atomic</linkerLibLibItem>
@@ -85,12 +88,15 @@
             <linkerLibLibItem>boost_unit_test_framework</linkerLibLibItem>
             <linkerLibLibItem>boost_wave</linkerLibLibItem>
             <linkerLibLibItem>boost_wserialization</linkerLibLibItem>
+            <linkerLibLibItem>json_spirit</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
       <item path="Face.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Face.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Mesh.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Mesh.hpp" ex="false" tool="3" flavor2="0">
       </item>
@@ -127,6 +133,8 @@
       <item path="Face.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Face.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Mesh.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Mesh.hpp" ex="false" tool="3" flavor2="0">
       </item>
