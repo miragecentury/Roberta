@@ -16,16 +16,15 @@ namespace PROFOND {
     class Face {
     public:
         //Constructeur
-        Face(int indice, PROFOND::Vertice * v1, PROFOND::Vertice * v2, PROFOND::Vertice * v3);
+        Face(PROFOND::Vertice * v1, PROFOND::Vertice * v2, PROFOND::Vertice * v3);
         //Destructeur
         ~Face();
         //Getter
         PROFOND::Vertice * get_v1();
         PROFOND::Vertice * get_v2();
         PROFOND::Vertice * get_v3();
-        
+
     private:
-        int indice;
         PROFOND::Vertice* v1;
         PROFOND::Vertice* v2;
         PROFOND::Vertice* v3;
