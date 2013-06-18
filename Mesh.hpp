@@ -16,7 +16,7 @@
 //Std
 #include <boost/iterator.hpp>
 #include <set>
-#include <map>
+#include <map>          
 #include <string>
 #include <iostream>
 
@@ -32,16 +32,16 @@ namespace PROFOND {
         void generateJSON(std::string pathToJSON);
 
         //Add
-        void addVertice(float x, float y, float z);
-        void addFace(PROFOND::Vertice* v1, PROFOND::Vertice* v2, PROFOND::Vertice* v3);
+        void addVertice(int indice,float x, float y, float z);
+        void addFace(int indice,PROFOND::Vertice* v1, PROFOND::Vertice* v2, PROFOND::Vertice* v3);
 
         //Deletion
         void delFacesWithVertice(PROFOND::Vertice* v);
         void delvertice(PROFOND::Vertice* v);
 
     private:
-        std::set<PROFOND::Vertice*> vertices;
-        std::set<PROFOND::Face*> faces;
+        std::map<int,PROFOND::Vertice*> vertices;
+        std::map<int,PROFOND::Face*> faces;
         int nbvertices;
         int nbfaces;
     };
