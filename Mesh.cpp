@@ -34,7 +34,9 @@ void PROFOND::Mesh::delFacesWithVertice(PROFOND::Vertice* v) {
 };
 
 void PROFOND::Mesh::populeJSON(std::string pathToJSON) {
-
+    std::ifstream is("Eprouvette.json");
+    json_spirit::Value value;
+    read(is, value);
 };
 
 void PROFOND::Mesh::generateJSON(std::string pathToJSON) {
