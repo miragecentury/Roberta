@@ -34,9 +34,35 @@ void PROFOND::Mesh::delFacesWithVertice(PROFOND::Vertice* v) {
 };
 
 void PROFOND::Mesh::populeJSON(std::string pathToJSON) {
-    std::ifstream is("Eprouvette.json");
+    json_spirit::Array indices;
+    json_spirit::Array vertices;
+    std::ifstream jsonFile(pathToJSON.c_str());
     json_spirit::Value value;
-    read(is, value);
+    if (jsonFile) {
+        json_spirit::read(jsonFile, value);
+
+        const json_spirit::Object& Tab = value.getObject();
+        for (json_spirit::Object::const_iterator i = Tab.begin(); i != Tab.end(); ++i) {
+            if (i->first == "vertices") {
+                std::cout << "vertices trouvés" << std::endl;
+                vertices = i->second.getArray();
+            }
+            if (i->first == "indices") {
+                std::cout << "indices trouvés" << std::endl;
+                indices = i->second.getArray();
+            }
+        }
+        jsonFile.close();
+
+        //Parcours des tableaux pour populer l'objet Mesh
+        for (int j = 0; j < vertices.size(); j++) {
+            std::cout << vertices[j].getReal() << std::endl;
+        }
+
+
+    } else {
+        std::cout << "Erreur d'ouverture du fichier : " << pathToJSON << std::endl;
+    }
 };
 
 void PROFOND::Mesh::generateJSON(std::string pathToJSON) {

@@ -15,10 +15,14 @@
 
 //Std
 #include <boost/iterator.hpp>
+#include <json_spirit/json_spirit.h>
+#include <map>
 #include <set>
-#include <map>          
 #include <string>
 #include <iostream>
+#include <ios>
+#include <iosfwd>
+#include <fstream>
 
 namespace PROFOND {
 
