@@ -10,6 +10,8 @@
 #ifndef FACE_HPP
 #define	FACE_HPP
 
+#include <set>
+
 #include "Vertice.hpp"
 
 namespace PROFOND {
@@ -24,6 +26,9 @@ namespace PROFOND {
         PROFOND::Vertice * get_v1();
         PROFOND::Vertice * get_v2();
         PROFOND::Vertice * get_v3();
+
+        //
+        std::set<PROFOND::Face *> getProximityFaces();
 
     private:
         //Attributs

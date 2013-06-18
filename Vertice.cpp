@@ -57,23 +57,43 @@ void PROFOND::Vertice::set_tag(PROFOND::Vertice::TAG tag) {
  *      Si la face n'est pas dans la liste des faces utilisant le vertice l'ajouter 
  */
 void PROFOND::Vertice::addFace(PROFOND::Face* face) {
+    bool already_exist = false;
+    std::set<PROFOND::Face*>::iterator it;
+    for (it = this->Faces.begin(); it != this->Faces.end(); it++) {
+        if (*it == face) {
+            already_exist = true;
+        }
+    }
+    if (already_exist == false) {
+        this->Faces.insert(face);
+    }
 };
 
 /**
  *      Supprimer la face dans la liste des faces utilisant le vertice
  */
 void PROFOND::Vertice::delFace(PROFOND::Face* face) {
-
+    this->Faces.erase(face);
 };
 
 //
 
+std::set<PROFOND::Face*> PROFOND::Vertice::getFaces() {
+    return this->Faces;
+};
+
 /**
  *      Retourne la liste des vertex à proximité du vertice
  */
-std::vector<PROFOND::Vertice*> PROFOND::Vertice::getProximityVertices() {
-    std::vector<PROFOND::Vertice*> returnVector;
-    //population
+std::set<PROFOND::Vertice*> PROFOND::Vertice::getProximityVertices() {
+    std::set<PROFOND::Vertice*> returnVector;
+    std::set<PROFOND::Face*>::iterator it;
+    std::set<PROFOND::Vertice*>::iterator it_rv;
+    for (it = this->Faces.begin(); it != this->Faces.end(); it++) {
+        returnVector.insert((*it)->get_v1());
+        returnVector.insert((*it)->get_v2());
+        returnVector.insert((*it)->get_v3());
+    }
     return returnVector;
 }
 

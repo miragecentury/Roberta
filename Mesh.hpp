@@ -17,6 +17,7 @@
 #include <boost/iterator.hpp>
 #include <json_spirit/json_spirit.h>
 #include <map>
+#include <set>
 #include <string>
 #include <iostream>
 #include <ios>
@@ -37,17 +38,14 @@ namespace PROFOND {
         //Add
         void addVertice(float x, float y, float z);
         void addFace(PROFOND::Vertice* v1, PROFOND::Vertice* v2, PROFOND::Vertice* v3);
-        void addFace(int indice_v1, int indice_v2, int indice_v3);
 
         //Deletion
-        void delFace(int indice);
-        void delFacesWithVertice(int indice_vertice);
         void delFacesWithVertice(PROFOND::Vertice* v);
-        void delvertice(int indice);
+        void delvertice(PROFOND::Vertice* v);
 
     private:
-        std::map<int, PROFOND::Vertice*> vertices;
-        std::map<int, PROFOND::Face*> faces;
+        std::set<PROFOND::Vertice*> vertices;
+        std::set<PROFOND::Face*> faces;
         int nbvertices;
         int nbfaces;
     };
