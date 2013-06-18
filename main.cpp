@@ -10,12 +10,15 @@
 #include <iostream>
 #include <json_spirit/json_spirit.h>
 
+#include "Mesh.hpp"
+
 using namespace std;
 
 /*
  * 
  */
 int main(int argc, char** argv) {
-
+    PROFOND::Mesh mesh;
+    mesh.populeJSON("Eprouvette.json");
     return 0;
 }
