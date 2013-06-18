@@ -7,8 +7,7 @@
 
 // #include "Mesh.hpp" (récurcive)
 
-#include <map>
-#include <vector>
+#include <set>
 
 #ifndef VERTICE_HPP
 #define	VERTICE_HPP
@@ -43,15 +42,15 @@ namespace PROFOND {
         //
         void addFace(PROFOND::Face * face);
         void delFace(PROFOND::Face * face);
-        std::vector<PROFOND::Face*> getFaces();
+        std::set<PROFOND::Face*> getFaces();
         //
-        std::vector<PROFOND::Vertice* > getProximityVertices();
+        std::set<PROFOND::Vertice* > getProximityVertices();
     private:
         PROFOND::Vertice::TAG tag;
         float x;
         float y;
         float z;
-        std::vector<PROFOND::Face*> Faces; //Face prenant ce vertice
+        std::set<PROFOND::Face*> Faces; //Face prenant ce vertice
     };
 };
 

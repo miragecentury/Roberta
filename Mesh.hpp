@@ -15,6 +15,7 @@
 
 //Std
 #include <boost/iterator.hpp>
+#include <set>
 #include <map>
 #include <string>
 #include <iostream>
@@ -39,8 +40,8 @@ namespace PROFOND {
         void delvertice(PROFOND::Vertice* v);
 
     private:
-        std::vector<PROFOND::Vertice*> vertices;
-        std::vector<PROFOND::Face*> faces;
+        std::set<PROFOND::Vertice*> vertices;
+        std::set<PROFOND::Face*> faces;
         int nbvertices;
         int nbfaces;
     };

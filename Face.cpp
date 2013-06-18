@@ -35,6 +35,22 @@ PROFOND::Vertice* PROFOND::Face::get_v3() {
 
 //
 
-std::vector<PROFOND::Face*>PROFOND::Face::getProximityFaces() {
-    
+std::set<PROFOND::Face*>PROFOND::Face::getProximityFaces() {
+    std::set<PROFOND::Face*> returnFaces;
+    std::set<PROFOND::Face*> tmp;
+    std::set<PROFOND::Face*>::iterator it;
+
+    tmp = this->v1->getFaces();
+    for (it = tmp.begin(); it != tmp.end(); it++) {
+        returnFaces.insert(*it);
+    }
+    tmp = this->v2->getFaces();
+    for (it = tmp.begin(); it != tmp.end(); it++) {
+        returnFaces.insert(*it);
+    }
+    tmp = this->v3->getFaces();
+    for (it = tmp.begin(); it != tmp.end(); it++) {
+        returnFaces.insert(*it);
+    }
+    return returnFaces;
 }
