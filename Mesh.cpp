@@ -46,6 +46,7 @@ void PROFOND::Mesh::populeJSON(std::string pathToJSON) {
             if (i->first == "vertices") {
                 std::cout << "vertices trouvés" << std::endl;
                 vertices = i->second.getArray();
+
             }
             if (i->first == "indices") {
                 std::cout << "indices trouvés" << std::endl;
@@ -55,8 +56,15 @@ void PROFOND::Mesh::populeJSON(std::string pathToJSON) {
         jsonFile.close();
 
         //Parcours des tableaux pour populer l'objet Mesh
+         std::cout << "Nb Vertices : " << vertices.size() << std::endl;
         for (int j = 0; j < vertices.size(); j++) {
-            std::cout << vertices[j].getReal() << std::endl;
+            float tmp_float = vertices[j].getReal();
+            //std::cout << tmp_float << std::endl;
+        }
+        std::cout << "Nb Indices : " << indices.size() << std::endl;
+        for (int j = 0; j < indices.size(); j++) {
+            int tmp_int = indices[j].getInt();
+            //std::cout << tmp_int << std::endl;
         }
 
 
