@@ -19,14 +19,14 @@ void PROFOND::Mesh::addFace(int indice_v1, int indice_v2, int indice_v3) {
             this->vertices.find(indice_v2) != this->vertices.end() &&
             this->vertices.find(indice_v3) != this->vertices.end()
             ) {
-        this->faces.insert(std::pair<int,PROFOND::Face*>(this->nbfaces++, new PROFOND::Face(this->vertices[indice_v1], this->vertices[indice_v2], this->vertices[indice_v3])));
+        this->faces.insert(std::pair<int, PROFOND::Face*>(this->nbfaces++, new PROFOND::Face(this->vertices[indice_v1], this->vertices[indice_v2], this->vertices[indice_v3])));
     } else {
         std::cout << "erreur indice(s) de vertice inconnu" << std::endl;
     }
 };
 
 void PROFOND::Mesh::addVertice(float x, float y, float z) {
-    this->vertices.insert(std::pair<int,PROFOND::Vertice*>(this->nbvertices++, new PROFOND::Vertice(x, y, z)));
+    this->vertices.insert(std::pair<int, PROFOND::Vertice*>(this->nbvertices++, new PROFOND::Vertice(x, y, z)));
 };
 
 void PROFOND::Mesh::delFace(int indice) {
@@ -56,7 +56,9 @@ void PROFOND::Mesh::delFacesWithVertice(PROFOND::Vertice* v) {
 };
 
 void PROFOND::Mesh::populeJSON(std::string pathToJSON) {
-
+    std::ifstream is("Eprouvette.json");
+    json_spirit::Value value;
+    read(is, value);
 };
 
 void PROFOND::Mesh::generateJSON(std::string pathToJSON) {
