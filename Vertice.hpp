@@ -43,6 +43,7 @@ namespace PROFOND {
         //
         void addFace(PROFOND::Face * face);
         void delFace(PROFOND::Face * face);
+        std::vector<PROFOND::Face*> getFaces();
         //
         std::vector<PROFOND::Vertice* > getProximityVertices();
     private:

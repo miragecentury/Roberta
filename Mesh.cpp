@@ -6,53 +6,31 @@ PROFOND::Mesh::Mesh() {
 };
 
 PROFOND::Mesh::~Mesh() {
+    //Delete all faces
+
+    //Delete all vertices
 
 };
 
 void PROFOND::Mesh::addFace(PROFOND::Vertice* v1, PROFOND::Vertice* v2, PROFOND::Vertice* v3) {
-
-};
-
-void PROFOND::Mesh::addFace(int indice_v1, int indice_v2, int indice_v3) {
-    if (
-            this->vertices.find(indice_v1) != this->vertices.end() &&
-            this->vertices.find(indice_v2) != this->vertices.end() &&
-            this->vertices.find(indice_v3) != this->vertices.end()
-            ) {
-        this->faces.insert(std::pair<int,PROFOND::Face*>(this->nbfaces++, new PROFOND::Face(this->vertices[indice_v1], this->vertices[indice_v2], this->vertices[indice_v3])));
-    } else {
-        std::cout << "erreur indice(s) de vertice inconnu" << std::endl;
-    }
+    PROFOND::Face* tmp_face;
+    tmp_face = new PROFOND::Face(v1, v2, v3);
+    this->faces.push_back(tmp_face);
+    v1->addFace(tmp_face);
+    v2->addFace(tmp_face);
+    v3->addFace(tmp_face);
 };
 
 void PROFOND::Mesh::addVertice(float x, float y, float z) {
-    this->vertices.insert(std::pair<int,PROFOND::Vertice*>(this->nbvertices++, new PROFOND::Vertice(x, y, z)));
-};
-
-void PROFOND::Mesh::delFace(int indice) {
-    if (this->faces.find(indice) != this->faces.end()) {
-        delete(this->faces[indice]);
-        this->faces.erase(indice);
-    } else {
-        std::cout << "erreur indice de face inconnu" << std::endl;
-    }
-};
-
-void PROFOND::Mesh::delvertice(int indice) {
-    if (this->vertices.find(indice) != this->vertices.end()) {
-        delete(this->vertices[indice]);
-        this->faces.erase(indice);
-    } else {
-        std::cout << "erreur indice de vertice inconnu" << std::endl;
-    }
-};
-
-void PROFOND::Mesh::delFacesWithVertice(int indice_vertices) {
-
+    this->vertices.push_back(new PROFOND::Vertice(x, y, z));
 };
 
 void PROFOND::Mesh::delFacesWithVertice(PROFOND::Vertice* v) {
-
+    std::vector<PROFOND::Face*> tmp_faces = v->getFaces();
+    std::vector<PROFOND::Face*>::iterator itr_tmp_faces;
+    for (itr_tmp_faces = tmp_faces.begin(); itr_tmp_faces != tmp_faces.end(); itr_tmp_faces++) {
+        delete(*itr_tmp_faces);
+    }
 };
 
 void PROFOND::Mesh::populeJSON(std::string pathToJSON) {
@@ -60,5 +38,8 @@ void PROFOND::Mesh::populeJSON(std::string pathToJSON) {
 };
 
 void PROFOND::Mesh::generateJSON(std::string pathToJSON) {
-
+    std::map<PROFOND::Vertice*, int>lstVertice;
+    std::map<PROFOND::Face*, int>lstFace;
+    int nbVertice = 0;
+    int nbFace = 0;
 };

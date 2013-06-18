@@ -25,6 +25,9 @@ namespace PROFOND {
         PROFOND::Vertice * get_v2();
         PROFOND::Vertice * get_v3();
 
+        //
+        std::vector<PROFOND::Face *> getProximityFaces();
+
     private:
         //Attributs
         PROFOND::Vertice* v1;
