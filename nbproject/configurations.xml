@@ -54,12 +54,14 @@
             <pElem>/usr/local/boost_1_53_0</pElem>
             <pElem>/usr/local/lib/json-spirit/include</pElem>
           </incDir>
-          <commandLine>-std=c++0x -L /usr/local/boost_1_53_0/libs/ -L/usr/local/lib/json-spirit</commandLine>
         </ccTool>
         <linkerTool>
           <linkerAddLib>
             <pElem>/usr/local/boost_1_53_0/stage/lib</pElem>
             <pElem>/usr/local/lib/json-spirit/build</pElem>
+            <pElem>/usr/local/lib/json-spirit-master/build</pElem>
+            <pElem>/usr/local/lib/json-spirit</pElem>
+            <pElem>/usr/local/lib/json-spirit-master</pElem>
           </linkerAddLib>
           <linkerLibItems>
             <linkerLibLibItem>boost_atomic</linkerLibLibItem>
@@ -90,9 +92,30 @@
             <linkerLibLibItem>boost_wave</linkerLibLibItem>
             <linkerLibLibItem>boost_wserialization</linkerLibLibItem>
             <linkerLibLibItem>json_spirit</linkerLibLibItem>
+            <linkerLibFileItem>/usr/local/lib/json-spirit-master/build/libjson_spirit.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/local/lib/json-spirit/build/libjson_spirit.so</linkerLibFileItem>
+            <linkerLibLibItem>json_spirit</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <packaging>
+        <packType>Debian</packType>
+        <packFileList>
+          <packFileListElem type="File"
+                            to="${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}"
+                            from="${OUTPUT_PATH}"
+                            perm="755"
+                            owner="root"
+                            group="bin"/>
+        </packFileList>
+        <packInfoList>
+          <packInfoListElem name="Package" value="roberta" mandatory="true"/>
+          <packInfoListElem name="Version" value="1.0" mandatory="true"/>
+          <packInfoListElem name="Architecture" value="amd64" mandatory="false"/>
+          <packInfoListElem name="Maintainer" value="insset" mandatory="false"/>
+          <packInfoListElem name="Description" value="..." mandatory="false"/>
+        </packInfoList>
+      </packaging>
       <item path="Eprouvette.json" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Face.cpp" ex="false" tool="1" flavor2="0">

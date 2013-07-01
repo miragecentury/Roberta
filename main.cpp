@@ -18,7 +18,9 @@ using namespace std;
  * 
  */
 int main(int argc, char** argv) {
-    PROFOND::Mesh mesh;
-    mesh.populeJSON("Eprouvette.json");
+    PROFOND::Mesh* mesh = new PROFOND::Mesh();
+    mesh->populeJSON("Eprouvette.json");
+    delete mesh;
+    std::cout << "End populeJSon" << std::endl;
     return 0;
 }
